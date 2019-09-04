@@ -36,4 +36,20 @@ it('calls swapi to get people', () => {
     })
 })
 
+//mock fetch 
+it('getPeople returns count and results ', () => {
+        //in jest also a spy
+    const mockFetch = jest.fn().mockReturnValue(Promise.resolve({
+        json: () => Promise.resolve({
+            count:87,
+            results: [0,1,2,3,4,5]
+        })
+    }))
+    expect.assertions(2);
+    return swapi.getPeoplePromise(mockFetch).then(data => {
+        expect(mockFetch.mock.calls.length).toBe(1);
+        expect(mockFetch).toBeCalledWith('https://swapi.co.api/people'));
+
+    });
+})
 
