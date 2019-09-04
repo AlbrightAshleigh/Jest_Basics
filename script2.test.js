@@ -24,7 +24,7 @@ it('calls swapi to get people', (done) => {
     })
 })
 
-//another way to handle async tests is to use return
+//another way to handle async tests is to use return on the promise
 
 it('calls swapi to get people', () => {
     expect.assertions(1);
