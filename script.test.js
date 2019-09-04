@@ -7,11 +7,14 @@ dbMock = [
     'dogpictures.com'
 ];
 
+describe('googleSearch', () => {
+
+
 it('this is a silly test', () => {
     expect('hello').toBe('hello');
 })
 
-    // 
+    
     it('testing search feature', () => {
         expect(googleSearch('testtest', dbMock)).toEqual([])
         expect(googleSearch('dog', dbMock)).toEqual(['dog.com', 'dogpictures.com'])
@@ -28,3 +31,5 @@ it('this is a silly test', () => {
         expect(googleSearch('.com', dbMock).length).toEqual(3)
 
      })
+
+    })
